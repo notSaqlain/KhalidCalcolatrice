@@ -7,18 +7,22 @@
 document.addEventListener("DOMContentLoaded", () => {
     const display = document.getElementById("display");
 
-    // Function to append a value to the display
     const appendToDisplay = (value) => {
+        if (display.value === "Error") {
+            display.value = "";
+        }
+
+        if (display.value === "0" && value !== ".") {
+            display.value = "";
+        }
         display.value += value;
     };
 
-    // Function to clear the display
     const clearDisplay = () => {
         display.value = "";
     };
 
-    // Function to evaluate the expression
-    const solve = () => {
+    const soluzione = () => {
         try {
             display.value = eval(display.value);
         } catch {
@@ -26,7 +30,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     };
 
-    // Add event listeners to buttons
     document.querySelectorAll(".buttons button").forEach((button) => {
         const value = button.getAttribute("data-value");
 
@@ -35,9 +38,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    // Event listener for clear button
     document.getElementById("clear").addEventListener("click", clearDisplay);
-
-    // Event listener for equals button
-    document.getElementById("equals").addEventListener("click", solve);
+    document.getElementById("equals").addEventListener("click", soluzione);
 });
