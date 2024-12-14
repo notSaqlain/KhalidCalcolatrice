@@ -39,5 +39,9 @@ button {
 }
 
 button:hover {
-    background-color: #f0f0f0;
+    background-color: #e05050;
+}
+
+#equals {
+    grid-column: span 4;
 }
