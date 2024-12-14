@@ -2,7 +2,7 @@ function appendToDisplay(value) {
     const display = document.getElementById('display');
     const currentValue = display.value;
     
-    if (isOperator(value) && isOperator(currentValue.slice(-1))) {
+    if (isOperator(value) && (currentValue === '' || isOperator(currentValue.slice(-1)))) {
         return;
     }
     
