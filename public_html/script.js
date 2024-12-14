@@ -2,6 +2,15 @@ function appendToDisplay(value) {
     const display = document.getElementById('display');
     const currentValue = display.value;
     
+    if (currentValue === 'Error') {
+        clearDisplay();
+    }
+
+    if (currentValue === '0' && !isOperator(value)) {
+        display.value = value;
+        return;
+    }
+
     if (isOperator(value) && (currentValue === '' || isOperator(currentValue.slice(-1)))) {
         return;
     }
