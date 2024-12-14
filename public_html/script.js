@@ -2,8 +2,7 @@ function appendToDisplay(value) {
     const display = document.getElementById('display');
     const currentValue = display.value;
     
-    // Prevent multiple operators in a row or starting with an operator except minus for negative numbers
-    if (isOperator(value) && (currentValue === '' || isOperator(currentValue.slice(-1)))) {
+    if (isOperator(value) && isOperator(currentValue.slice(-1))) {
         return;
     }
     
@@ -14,7 +13,7 @@ function isOperator(char) {
     return ['+', '-', '*', '/', '.'].includes(char);
 }
 
-function calculateResult() {
+function Soluzione() {
     const display = document.getElementById('display');
     try {
         display.value = eval(display.value);
