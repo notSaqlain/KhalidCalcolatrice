@@ -397,3 +397,4 @@ FodyWeavers.xsd
 # JetBrains Rider
 *.sln.iml
 /test/nbproject/private/
+nbproject/private/private.properties
